@@ -1,8 +1,10 @@
 import pygame
+from constants import *
 
 
 def main():
-    pass
+    print(f"Screen width  : {SCREEN_WIDTH}")
+    print(f"Screen height : {SCREEN_HEIGHT}")
 
 
 if __name__ == "__main__":
