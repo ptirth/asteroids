@@ -18,10 +18,10 @@ class Player(CircleShape):
             self.__rotate(-dt)
         elif keys[pygame.K_d]:
             self.__rotate(dt)
-    
+
     def __rotate(self, dt):
         self.rotation += PLAYER_TURN_SPEED * dt
-    
+
     def __triangle(self):
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
         right = pygame.Vector2(0, 1).rotate(self.rotation + 90) * self.radius / 1.5
