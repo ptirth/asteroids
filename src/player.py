@@ -12,7 +12,15 @@ class Player(CircleShape):
         pygame.draw.polygon(screen, (255, 255, 255), self.__triangle(), 2)
 
     def update(self, dt):
-        raise NotImplementedError()
+        keys = pygame.key.get_pressed()
+
+        if keys[pygame.K_a]:
+            self.__rotate(-dt)
+        elif keys[pygame.K_d]:
+            self.__rotate(dt)
+    
+    def __rotate(self, dt):
+        self.rotation += PLAYER_TURN_SPEED * dt
     
     def __triangle(self):
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
